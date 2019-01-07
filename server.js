@@ -66,6 +66,7 @@ options.setChromeBinaryPath(chromium.path);
 options.addArguments('--headless');
 options.addArguments('--disable-gpu');
 options.addArguments('--window-size=1280,960');
+options.addArguments('--no-sandbox');
 options.setUserPreferences({ 'profile.managed_default_content_settings.images': 2 });
 
 var driver;
