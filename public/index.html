@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="One search box for all videos in the Internet.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>video search box</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script src="main.js" type="module"></script>
+</head>
+
+<body>
+    <h1 id="banner">One searchbox for all videos</h1>
+    <div class="searchbox">
+        <input type="text" id="title" required="required" pattern="[\s\S]+"/>
+        <button id="go" class="ripple"><i class="material-icons">search</i></button>
+    </div>
+    <div class="videobox">
+    <video controls></video>
+    <button id="close" class="ripple"><i class="material-icons">close</i></button>
+    </div>
+    <div id="snackbar-holder">
+    
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "video-search-box",
+  "version": "0.0.1",
+  "description": "One search box for all videos in the Internet.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Antoni Nowinowski",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chromedriver": "^2.43.0",
+    "chromium": "^1.0.2",
+    "express": "^4.16.4",
+    "node-fetch": "^2.2.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}

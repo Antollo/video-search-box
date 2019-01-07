@@ -1,0 +1,213 @@
+body {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+#banner {
+    position: absolute;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.7);
+    top: 88px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 7.5vw;
+    text-align: center;
+    width: 100%;
+}
+
+.searchbox {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    width: calc(100% - 48px);
+    margin-left: 24px;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: row;
+    transition: top 0.8s;
+}
+
+.searchbox.up {
+    top: 24px;
+}
+
+.videobox.up {
+    top: 88px;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: background-color 200ms linear;
+    padding: 12px;
+    height: 16px;
+    min-width: 0;
+    border-radius: 40px;
+    border-width: 0;
+    margin-right: 4px;
+    flex-grow: 2;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(66, 66, 66);
+    font-size: 16px;
+}
+
+input:focus {
+    background-color: white;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+#go {
+    border-style: none;
+    padding: 0;
+    background-color: transparent;
+    color: rgb(66, 66, 66);
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: background-color 200ms linear;
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+#go:focus {
+    background-color: white;
+}
+
+.videobox {
+    height: calc(100% - 112px);
+    position: absolute;
+    z-index: 2;
+    top: 100%;
+    transition: top 0.8s;
+    width: calc(100% - 48px);
+    margin-left: 24px;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+video {
+    object-fit: contain;
+    background-color: black;
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: calc(100% - 96px);
+}
+
+#close {
+    display: block;
+    border-style: none;
+    padding: 12px;
+    margin: 12px;
+    background-color: white;
+    color: rgb(66, 66, 66);
+    border-radius: 40px;
+    width: 48px;
+    height: 48px;
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, gray 10%, transparent 10%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+#snackbar-holder {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: relative;
+}
+
+.snackbar {
+    visibility: hidden;
+    width: calc(100% - 48px);
+    box-sizing: border-box;
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    white-space: pre;
+    overflow: hidden;
+    color: rgb(66, 66, 66);
+    text-align: center;
+    border-radius: 40px;
+    padding: 12px;
+    height: 40px;
+    position: relative;
+    z-index: 1;
+    bottom: 0;
+}
+
+.snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: -30px;
+        opacity: 0;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 0;
+        opacity: 1;
+    }
+    to {
+        bottom: -30px;
+        opacity: 0;
+    }
+}
+
+i.material-icons {
+    display: inline-block;
+    vertical-align: middle;
+}
