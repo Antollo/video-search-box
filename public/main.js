@@ -89,18 +89,15 @@ window.addEventListener('load', async function () {
 
     document.getElementsByTagName('video')[0].addEventListener('error', function(event) {
         //event.preventDefault();
-        //showSnackbar('<i class="material-icons">error</i>');
-        console.log(event); 
-        videoSources.shift();
-        document.querySelector('.searchbox').classList.remove('up');
-        document.querySelector('.videobox').classList.remove('up');
-        document.querySelector('video').removeAttribute('src');
+        showSnackbar('<i class="material-icons">error</i>'); 
+        document.getElementById('close').click();
     });
 
     setInterval(function () {
         if (videoSources.length && !document.querySelector('video').hasAttribute('src')) {
             document.querySelector('.searchbox').classList.add('up');
             document.querySelector('.videobox').classList.add('up');
+            document.querySelector('#banner').classList.add('up')
             document.querySelector('video').setAttribute('src', videoSources[0]);
         }
     }, 500);
@@ -109,6 +106,7 @@ window.addEventListener('load', async function () {
         videoSources.shift();
         document.querySelector('.searchbox').classList.remove('up');
         document.querySelector('.videobox').classList.remove('up');
+        document.querySelector('#banner').classList.remove('up');
         document.querySelector('video').removeAttribute('src');
     });
 

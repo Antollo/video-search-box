@@ -18,12 +18,20 @@ html {
     position: absolute;
     z-index: 1;
     color: rgba(255, 255, 255, 0.7);
-    top: 88px;
+    top: 0;
     margin: 0;
+    padding: 24px;
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    font-size: 7.5vw;
-    text-align: center;
+    font-size: 9vw;
+    line-height: 0.9;
+    text-align: right;
     width: 100%;
+    transition: top 0.8s;
+}
+
+#banner.up {
+    top: -50vh;
 }
 
 .searchbox {
