@@ -2,7 +2,8 @@ const express = require('express');
 const fetch = require('node-fetch');
 //const fs = require('fs');
 const app = express();
-var http = require('http').Server(app);
+const http = require('http').Server(app);
+const cors = require('cors')
 
 /*else http = require('https').createServer({
     key: fs.readFileSync('privatekey.key'),
@@ -17,7 +18,7 @@ const chromium = require('chromium');
 const { By, Key, until, promise } = webdriver;
 require('chromedriver');
 
-
+app.use(cors({origin: '*'}));
 app.use(express.static(__dirname + '/public'));
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
