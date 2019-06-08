@@ -37,7 +37,7 @@ app.post('/getAttributesFromSelectors', jsonParser, async function (req, res) {
             chromeIsBusy = false;
             return ['error'];
         });
-        arr = arr.map(function(el) { return el.trim(); }).filter(function (el) { return el.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi); });
+        arr = arr.map(function(el) { return el.trim(); });//.filter(function (el) { return el.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi); });
         res.end(JSON.stringify(arr));
     } else {
         res.end('["error"]');
